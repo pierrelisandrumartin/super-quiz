@@ -1,0 +1,62 @@
+html {
+    height: 100vh;
+    font-family: "Vent Sans", sans-serif;
+}
+header {
+    height: 15rem;
+}
+
+h1 {
+    font-family: "Bangers", system-ui;
+    height: 100%;
+    text-align: center;
+    padding-top: 1rem; 
+    font-size: 8rem; 
+}
+main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 60rem;
+}
+
+h2 {
+    font-family: "Bangers", system-ui;
+    font-size: 3rem;
+}
+#container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    height: 32rem;
+    width: 45rem;
+}
+
+#container > p {
+    font-size: 30px;
+    margin: 2rem 0;
+}
+
+#container > button {
+    width: 100%;
+    height: 6rem;
+    font-size: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin-bottom: 1rem;
+    padding-left: 2rem;
+}
+
+#after {
+    position: relative;
+}
+
+#after > button {
+    width: 12rem;
+    height: 4rem;
+    font-size: 2rem;
+    position: absolute;
+    left: 33rem;
+}
