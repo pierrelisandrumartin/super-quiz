@@ -33,7 +33,10 @@ h2 {
   filter: drop-shadow(0px 8px 6px #525252);
 }
 
-#container {
+.container-question1,
+.container-question2,
+.container-question3,
+.container-question4 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -41,13 +44,16 @@ h2 {
   width: 48rem;
 }
 
-#container > p {
+p {
   font-size: 24px;
   margin: 2rem 0;
   font-weight: 800;
 }
 
-#container > button {
+.container-question1 > button,
+.container-question2 > button,
+.container-question3 > button,
+.container-question4 > button {
   width: 95%;
   height: 4rem;
   font-size: 24px;
@@ -63,7 +69,10 @@ h2 {
   background-color: rgb(244 67 54 / 52%);
 }
 
-#container > button:hover {
+.container-question1 > button:hover,
+.container-question2 > button:hover,
+.container-question3 > button:hover,
+.container-question4 > button:hover {
   font-size: 28px;
   background-color: rgb(77 200 82 / 36%);
 }
@@ -107,4 +116,20 @@ footer {
 #theme > button {
   position: initial;
   margin-top: 3rem;
+}
+
+.container-question1 {
+  display: none;
+}
+
+.container-question2 {
+  display: inherit;
+}
+
+.container-question3 {
+  display: none;
+}
+
+.container-question4 {
+  display: none;
 }

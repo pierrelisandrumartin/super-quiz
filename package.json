@@ -1,0 +1,36 @@
+{
+  "devDependencies": {
+    "ts-node": "^10.9.2"
+  },
+  "name": "super-quiz",
+  "version": "1.0.0",
+  "main": "index.js",
+  "dependencies": {
+    "acorn-walk": "^8.3.4",
+    "arg": "^4.1.3",
+    "yn": "^3.1.1",
+    "acorn": "^8.15.0",
+    "make-error": "^1.3.6",
+    "typescript": "^5.9.3",
+    "create-require": "^1.1.1",
+    "undici-types": "^7.16.0",
+    "diff": "^4.0.2",
+    "v8-compile-cache-lib": "^3.0.1"
+  },
+  "scripts": {
+    "tWatch" :"tsc --watch ./SRC/script.ts --outDir ./DIST ",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pierrelisandrumartin/super-quiz.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pierrelisandrumartin/super-quiz/issues"
+  },
+  "homepage": "https://github.com/pierrelisandrumartin/super-quiz#readme",
+  "description": ""
+}
