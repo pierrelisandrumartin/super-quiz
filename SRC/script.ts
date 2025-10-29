@@ -27,7 +27,9 @@ let arraySuperHeros: Question[] = [
 
 let numberQuestion = 0;
 
-const container = document.querySelector ('.container');
+const messageEnd = document.querySelector('.message-end') as HTMLElement;
+const container = document.querySelector('.container') as HTMLElement;
+const after = document.querySelector('.btn') as HTMLElement;
 
 function questionDisplay() {
     const newP = document.createElement('p');
@@ -55,3 +57,20 @@ function answersDisplay() {
 
 questionDisplay();
 answersDisplay();
+
+
+after?.addEventListener("click", function (e) {
+    if (container && numberQuestion + 1 < arraySuperHeros.length) {
+        container.innerHTML = "";
+        numberQuestion++;
+        questionDisplay();
+        answersDisplay();
+    } else {
+        if (container && messageEnd) {
+            container.innerHTML = "";
+            messageEnd.style.display = 'inherit';
+        }
+    }
+});
+
+
