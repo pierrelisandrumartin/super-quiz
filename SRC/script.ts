@@ -1,99 +1,105 @@
-let superHerosQuestion1: {
-    question: string, firstReponse: string, secondReponse: string, thirdReponse: string, fourthReponse: string
-} = {
-    question: "Quel est le premier acteur à avoir jouer Spider-Man ?",
-    firstReponse: "Tom Holland",
-    secondReponse: "Andrew Garfield",
-    thirdReponse: "Tobby Maguire",
-    fourthReponse: "Peter Parker",
-};
-
-let superHerosQuestion2: {
-    question: string, firstReponse: string, secondReponse: string, thirdReponse: string, fourthReponse: string
-} = {
-    question: "Combien de temps Captain America est resté dans la glace ?",
-    firstReponse: "74 ans",
-    secondReponse: "13 ans",
-    thirdReponse: "148 ans",
-    fourthReponse: "62 ans",
-};
-
-let superHerosQuestion3: {
-    question: string, firstReponse: string, secondReponse: string, thirdReponse: string, fourthReponse: string
-} = {
-    question: "Quel est le point faible de Superman ?",
-    firstReponse: "Le curcuma",
-    secondReponse: "La Kryptonite",
-    thirdReponse: "Les femmes",
-    fourthReponse: "Le soleil",
-};
-
-let superHerosQuestion4: {
-    question: string, firstReponse: string, secondReponse: string, thirdReponse: string, fourthReponse: string
-} = {
-    question: "Quelle arme utilise Catwoman ?",
-    firstReponse: "Un bazooka",
-    secondReponse: "Une armée de chats",
-    thirdReponse: "Un fouet",
-    fourthReponse: "Des couteaux",
-};
-
-// Récupération des éléments du DOM
-const firstContainer = document.querySelector('.container-question1');
-if (firstContainer) {
-    const questionSuperHeros = firstContainer.querySelector('p')!;
-    const buttons = Array.from(firstContainer.querySelectorAll('button'));
-
-// Affichage de la question
-    questionSuperHeros.textContent = superHerosQuestion1.question;
-
-// Affichage des réponses dans les boutons
-
-    buttons.forEach((button, i) => {
-        switch(i) {
-            case 0:
-                button.textContent = superHerosQuestion1.firstReponse;
-                break;
-            case 1:
-                button.textContent = superHerosQuestion1.secondReponse;
-                break;
-            case 2:
-                button.textContent = superHerosQuestion1.thirdReponse;
-                break;
-            case 3:
-                button.textContent = superHerosQuestion1.fourthReponse;
-                break;
-        }
-    });
-};
 
 
-const secondContainer = document.querySelector('.container-question2');
-if (secondContainer) {
-    const questionSuperHeros = secondContainer.querySelector('p')!;
-    const buttons = Array.from(secondContainer.querySelectorAll('button'))
+// // Affichage des réponses dans les boutons
+
+//     buttons.forEach((button, i) => {
+//         switch(i) {
+//             case 0:
+//                 button.textContent = superHerosQuestion1.firstReponse;
+//                 break;
+//             case 1:
+//                 button.textContent = superHerosQuestion1.secondReponse;
+//                 break;
+//             case 2:
+//                 button.textContent = superHerosQuestion1.thirdReponse;
+//                 break;
+//             case 3:
+//                 button.textContent = superHerosQuestion1.fourthReponse;
+//                 break;
+//         }
+//     });
+// };
+
+
+// ETAPE 1
+// const container = document.querySelector('.container-question2')!;
+// const ul = document.createElement('ul');
+
+// let tableau = ["Hello", "Yo", "Ciao"];
+
+// for (let i = 0; i < tableau.length; i++) {
+//     let newLi: HTMLElement = document.createElement("li")!;
+//     if (newLi) {
+//         newLi.textContent = tableau[i] as string;
+//         ul.appendChild(newLi);
+//     }
+
+// }
+
+// container.appendChild(ul);
+
+//Etape 2
+
+interface Question {
+    question: string;
+    reponse: string[];
+}
+
+let arraySuperHeros: Question[] = [
+    {
+        question: "Quel est le premier acteur à avoir jouer Spider-Man ?",
+        reponse: ["Tom Holland", "Andrew Garfield", "Tobby Maguire", "Peter Parker"]
+    },
+
+    {
+        question: "Combien de temps Captain America est resté dans la glace ?",
+        reponse: ["74 ans", "13 ans", "148 ans", "62 ans"]
+    },
+
+    {
+        question: "Quel est le point faible de Superman ?",
+        reponse: ["Le curcuma", "La Kryptonite", "Les femmes", "Le soleil"]
+    },
+
+    {
+        question: "Quelle arme utilise Catwoman ?",
+        reponse: ["Un bazooka", "Une armée de chats", "Un fouet", "Des couteaux"] 
+    }
+]
+
+let numberQuestion = 0;
+
+const container = document.querySelector('.container');
+
+function questionDislay() {
+    const newP = document.createElement('p');
+    if (newP) {
+        newP.textContent = arraySuperHeros[numberQuestion]?.question as string;
+        container?.appendChild(newP);
+    }
+}
+
+function reponseDisplay () {
+    const newButton = document.createElement('button');
+    if (newButton) {
+        // console.log(arraySuperHeros[numberQuestion]?.reponse[0])
+        newButton.textContent = arraySuperHeros[numberQuestion]?.reponse[0] as string;
+        container?.appendChild(newButton);
+    }
+}
+
+questionDislay();
+reponseDisplay();
     
-    questionSuperHeros.textContent = superHerosQuestion2.question;
-
-    buttons.forEach((button, i) => {
-        switch (i) {
-            case 0: button.textContent = superHerosQuestion2.firstReponse;
-                break;
-            
-            case 1: button.textContent = superHerosQuestion2.secondReponse;
-                break;
-            
-            case 2: button.textContent = superHerosQuestion2.thirdReponse;
-                break;
-            
-            case 3: button.textContent = superHerosQuestion2.fourthReponse;
-                break;
-            
-            
-        }
-    })
-
-};
 
 
+// }
+    // if (newButton) {
+    //     newButton.textContent = questionSuperHeros.superHerosQuestion1.firstReponse
+    //     newButton.textContent = questionSuperHeros.superHerosQuestion1.secondReponse
+    // }
 
+    
+
+
+//Etape 3
