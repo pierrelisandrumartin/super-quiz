@@ -28,8 +28,13 @@ let arraySuperHeros: Question[] = [
 let numberQuestion = 0;
 
 const container = document.querySelector(".container") as HTMLElement;
-const buttonNext = document.querySelector(".btn") as HTMLElement;
+const buttonNext = document.querySelector(".btn button") as HTMLButtonElement | null;
 const messageEnd = document.querySelector(".message-end") as HTMLElement;
+
+if (buttonNext) {
+    buttonNext.disabled = true;
+};
+
 
 function questionDisplay() {
     const newP = document.createElement("p"); 
@@ -47,26 +52,55 @@ function answersDisplay() {
     }
 
     for (let i = 0; i < answer.length; i++) {
-        const newButton = document.createElement("button");
-        newButton.textContent = arraySuperHeros[numberQuestion]?.answer[i] as string;
-        container.appendChild(newButton)
-    }
+        const newInput = document.createElement("input");
+        newInput.type = "button";
+        newInput.className = "answer";
+        newInput.name = "answer";
+        newInput.value = arraySuperHeros[numberQuestion]?.answer[i] as string;
+        container.appendChild(newInput)
+    };
 
-}
+    const buttonAnswer = document.querySelectorAll(".answer") as NodeListOf<HTMLInputElement>;
+    
+    buttonAnswer.forEach(button => {
+        button.addEventListener("click", function (e) {
+
+            buttonAnswer.forEach(otherButton => {
+                otherButton.disabled = true; 
+            });
+
+            button.disabled = false;
+            button.style.border = "4px solid #800404";
+
+            if (buttonNext) {
+                buttonNext.disabled = false;
+            };
+        });
+    });
+};
+
 answersDisplay();
 
-buttonNext?.addEventListener("click", function(e) {
+buttonNext?.addEventListener("click", function (e) {
+
     if (container && numberQuestion + 1 < arraySuperHeros.length) {
         container.innerHTML = "";
         numberQuestion++;
         questionDisplay();
         answersDisplay();
+
+        if (buttonNext) {
+            buttonNext.disabled = true;
+        };
+
     } else {
         if (container && messageEnd) {
             container.innerHTML = "";
             messageEnd.style.display = "inherit"
-        }
-    }
-})
+        };
+    };
+});
+
+
 
 

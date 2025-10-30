@@ -52,7 +52,7 @@ h2 {
   font-weight: 800;
 }
 
-.container > button {
+.answer {
   width: 50vw;
   height: 4rem;
   font-size: 24px;
@@ -68,7 +68,7 @@ h2 {
   background-color: rgb(244 67 54 / 52%);
 }
 
-.container > button:hover {
+.answer:hover {
   font-size: 28px;
   background-color: rgb(77 200 82 / 36%);
 }
