@@ -42,20 +42,20 @@ function answersDisplay() {
     let answer = arraySuperHeros[numberQuestion]?.answer;
     
     if (!answer) {
-     console.warn("aucune reponse disponible pour la question", numberQuestion);
-     return;
+    console.warn("aucune reponse disponible pour la question", numberQuestion);
+    return;
     }
 
     for (let i = 0; i < answer.length; i++) {
         const newButton = document.createElement("button");
-         newButton.textContent = arraySuperHeros[numberQuestion]?.answer[i] as string;
-         container.appendChild(newButton)
+        newButton.textContent = arraySuperHeros[numberQuestion]?.answer[i] as string;
+        container.appendChild(newButton)
     }
 
 }
- answersDisplay();
+answersDisplay();
 
- buttonNext?.addEventListener("click", function(e) {
+buttonNext?.addEventListener("click", function(e) {
     if (container && numberQuestion + 1 < arraySuperHeros.length) {
         container.innerHTML = "";
         numberQuestion++;
@@ -67,7 +67,6 @@ function answersDisplay() {
             messageEnd.style.display = "inherit"
         }
     }
-    
- })
+})
 
 
