@@ -27,39 +27,35 @@ let arraySuperHeros: Question[] = [
 
 let numberQuestion = 0;
 
-const messageEnd = document.querySelector('.message-end') as HTMLElement;
-const container = document.querySelector('.container') as HTMLElement;
-const after = document.querySelector('.btn') as HTMLElement;
+const container = document.querySelector(".container") as HTMLElement;
+const buttonNext = document.querySelector(".btn") as HTMLElement;
+const messageEnd = document.querySelector(".message-end") as HTMLElement;
 
 function questionDisplay() {
-    const newP = document.createElement('p');
-    if (newP) {
-        newP.textContent = arraySuperHeros[numberQuestion]?.question as string;
-        container?.appendChild(newP);
-    }
+    const newP = document.createElement("p"); 
+    newP.textContent = arraySuperHeros[numberQuestion]?.question as string;
+    container.appendChild(newP)  
 }
+questionDisplay();
 
 function answersDisplay() {
+    let answer = arraySuperHeros[numberQuestion]?.answer;
     
-    let currentAnswers = arraySuperHeros[numberQuestion]?.answer;
-
-    if (!currentAnswers) {
-        console.warn('Aucune réponse disponible pour la question', numberQuestion);
-        return;
+    if (!answer) {
+     console.warn("aucune reponse disponible pour la question", numberQuestion);
+     return;
     }
 
-    for (let i = 0; i < currentAnswers.length; i++) {
-        const newButton = document.createElement('button');
-        newButton.textContent = arraySuperHeros[numberQuestion]?.answer[i] as string;
-        container?.appendChild(newButton);
+    for (let i = 0; i < answer.length; i++) {
+        const newButton = document.createElement("button");
+         newButton.textContent = arraySuperHeros[numberQuestion]?.answer[i] as string;
+         container.appendChild(newButton)
     }
+
 }
+ answersDisplay();
 
-questionDisplay();
-answersDisplay();
-
-
-after?.addEventListener("click", function (e) {
+ buttonNext?.addEventListener("click", function(e) {
     if (container && numberQuestion + 1 < arraySuperHeros.length) {
         container.innerHTML = "";
         numberQuestion++;
@@ -68,9 +64,10 @@ after?.addEventListener("click", function (e) {
     } else {
         if (container && messageEnd) {
             container.innerHTML = "";
-            messageEnd.style.display = 'inherit';
+            messageEnd.style.display = "inherit"
         }
     }
-});
+    
+ })
 
 
