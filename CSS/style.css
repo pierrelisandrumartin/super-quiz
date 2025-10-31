@@ -11,10 +11,6 @@ body {
   height: 100vh;
 }
 
-header {
-  height: 18vh;
-}
-
 h1 {
   font-family: "Bangers", system-ui;
   text-align: center;
@@ -53,7 +49,7 @@ h2 {
 }
 
 .answer {
-  width: 50vw;
+  width: 46vw;
   height: 4rem;
   font-size: 24px;
   display: flex;
@@ -75,6 +71,7 @@ h2 {
 
 .btn {
   position: relative;
+  width: 100%;
 }
 
 .btn > button {
@@ -82,7 +79,6 @@ h2 {
   height: 3rem;
   font-size: 20px;
   position: absolute;
-  left: 9rem;
   border-radius: 25px;
   font-weight: 900;
   filter: drop-shadow(0px 6px 9px #363636);
@@ -123,4 +119,35 @@ footer > p {
   position: absolute;
   top: 16rem;
   font-size: 4rem;
+}
+
+#message-good-answer {
+  display: none;
+  font-size: 3vw;
+  font-weight: 600;
+  color: green;
+}
+
+#message-wrong-answer {
+  display: none;
+  font-size: 3vw;
+  font-weight: 600;
+  color: red;
+}
+
+#after {
+  right: 16vw;
+  width: 16vw;
+}
+
+#restart {
+  display: none;
+  width: 22vw;
+  left: 56vw;
+}
+
+#menu {
+  display: none;
+  left: 23vw;
+  width: 22vw;
 }
