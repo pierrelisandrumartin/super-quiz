@@ -74,7 +74,8 @@ h2 {
   width: 100%;
 }
 
-.btn > button {
+.btn > button,
+#restart > button {
   width: 12rem;
   height: 3rem;
   font-size: 20px;
@@ -140,7 +141,7 @@ footer > p {
   width: 16vw;
 }
 
-#restart {
+#restart > button {
   display: none;
   width: 22vw;
   left: 56vw;

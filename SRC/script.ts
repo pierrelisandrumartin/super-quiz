@@ -34,7 +34,7 @@ let numberQuestion = 0;
 
 const container = document.querySelector(".container") as HTMLElement;
 const buttonNext = document.querySelector(".btn #after") as HTMLButtonElement | null;
-const buttonRestart = document.querySelector(".btn #restart") as HTMLButtonElement | null;
+const buttonRestart = document.querySelector(".btn #restart button") as HTMLButtonElement | null;
 const buttonMenu = document.querySelector(".btn #menu") as HTMLButtonElement | null;
 const messageGoodAnswer = document.querySelector("#message-good-answer") as HTMLElement;
 const messageWrongAnswer = document.querySelector("#message-wrong-answer") as HTMLElement;
