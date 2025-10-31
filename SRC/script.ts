@@ -1,40 +1,49 @@
 interface Question {
     question: string;
     answer: string[];
+    correctAnswer: string;
 }
 
 let arraySuperHeros: Question[] = [
     {
         question: "Quel est le premier acteur à avoir jouer Spider-Man ?",
-        answer: ["Tom Holland", "Andrew Garfield", "Tobby Maguire", "Peter Parker"]
+        answer: ["Tom Holland", "Andrew Garfield", "Tobby Maguire", "Peter Parker"],
+        correctAnswer: "Tobby Maguire"
     },
 
     {
         question: "Combien de temps Captain America est resté dans la glace ?",
-        answer: ["74 ans", "13 ans", "148 ans", "62 ans"]
+        answer: ["74 ans", "13 ans", "148 ans", "62 ans"],
+        correctAnswer: "62 ans"
     },
 
     {
         question: "Quel est le point faible de Superman ?",
-        answer: ["Le curcuma", "La Kryptonite", "Les femmes", "Le soleil"]
+        answer: ["Le curcuma", "La Kryptonite", "Les femmes", "Le soleil"],
+        correctAnswer: "La Kryptonite"
     },
 
     {
         question: "Quelle arme utilise Catwoman ?",
-        answer: ["Un bazooka", "Une armée de chats", "Un fouet", "Des couteaux"] 
+        answer: ["Un bazooka", "Une armée de chats", "Un fouet", "Des couteaux"],
+        correctAnswer: "Un fouet"
     }
 ]
 
 let numberQuestion = 0;
 
 const container = document.querySelector(".container") as HTMLElement;
-const buttonNext = document.querySelector(".btn button") as HTMLButtonElement | null;
+const buttonNext = document.querySelector(".btn #after") as HTMLButtonElement | null;
+const buttonRestart = document.querySelector(".btn #restart button") as HTMLButtonElement | null;
+const buttonMenu = document.querySelector(".btn #menu") as HTMLButtonElement | null;
+const messageGoodAnswer = document.querySelector("#message-good-answer") as HTMLElement;
+const messageWrongAnswer = document.querySelector("#message-wrong-answer") as HTMLElement;
 const messageEnd = document.querySelector(".message-end") as HTMLElement;
+
 
 if (buttonNext) {
     buttonNext.disabled = true;
 };
-
 
 function questionDisplay() {
     const newP = document.createElement("p"); 
@@ -72,6 +81,24 @@ function answersDisplay() {
             button.disabled = false;
             button.style.border = "4px solid #800404";
 
+            if (messageGoodAnswer && messageWrongAnswer && button.value === arraySuperHeros[numberQuestion]?.correctAnswer) {
+                
+                button.style.border = "4px solid green";
+                messageGoodAnswer.style.display = "inherit";
+
+            } else {
+
+                button.style.border = "4px solid red";
+                messageWrongAnswer.style.display = "inherit";
+
+                buttonAnswer.forEach(btn => {
+                    if (btn.value === arraySuperHeros[numberQuestion]?.correctAnswer) {
+                        btn.style.border = "4px solid green";
+                    }
+                });
+
+            };
+
             if (buttonNext) {
                 buttonNext.disabled = false;
             };
@@ -85,6 +112,8 @@ buttonNext?.addEventListener("click", function (e) {
 
     if (container && numberQuestion + 1 < arraySuperHeros.length) {
         container.innerHTML = "";
+        messageGoodAnswer.style.display = "none";
+        messageWrongAnswer.style.display = "none";
         numberQuestion++;
         questionDisplay();
         answersDisplay();
@@ -94,8 +123,13 @@ buttonNext?.addEventListener("click", function (e) {
         };
 
     } else {
-        if (container && messageEnd) {
+        if (container && messageEnd && buttonRestart && buttonMenu) {
             container.innerHTML = "";
+            buttonNext.style.display = "none";
+            buttonMenu.style.display = "inherit"
+            buttonRestart.style.display = "inherit";
+            messageGoodAnswer.style.display = "none";
+            messageWrongAnswer.style.display = "none";
             messageEnd.style.display = "inherit"
         };
     };
