@@ -30,7 +30,31 @@ let arraySuperHeros: Question[] = [
     }
 ]
 
+let arrayJeuxVideos: Question[] = [
+    {
+        question: "Quel est le tout premier RPG (Role Play-Game) ?",
+        answer: ["Final Fantasy", "Donjons & Dragons", "Utopia", "Hydlide"],
+        correctAnswer: "Donjons & Dragons"
+    },
 
+    {
+        question: "Qui a créer le jeu indépendant Agni ?",
+        answer: ["Headup Games", "Venidad", "Les Canards Boiteux", "Semiworks"],
+        correctAnswer: "Les Canards Boiteux"
+    },
+
+    {
+        question: "Quel est le jeu le plus vendu de tous les temps ?",
+        answer: ["Minecraft", "Tetris", "Wii Sports", "Grand Theft Auto V"],
+        correctAnswer: "Minecraft"
+    },
+
+    {
+        question: "Quel est le nom du mode battle royale de Call of Duty ?",
+        answer: ["Apex", "Warzone", "Blackout", "Frontlines"],
+        correctAnswer: "Warzone"
+    }
+]
 
 const container = document.querySelector(".container") as HTMLElement;
 const buttonNext = document.querySelector(".btn #after") as HTMLButtonElement | null;

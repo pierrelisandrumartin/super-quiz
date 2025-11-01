@@ -75,7 +75,8 @@ h2 {
 }
 
 .btn > button,
-#restart > button {
+#restart > button,
+form > button {
   width: 12rem;
   height: 3rem;
   font-size: 20px;
@@ -189,4 +190,18 @@ RAJOUTER */
 #verybad-icon {
   bottom: 0vh;
   left: 52vw;
+}
+
+/* ACCUEIL */
+
+#super-heros {
+  width: 18vw;
+  left: 41vw;
+  top: 30vh;
+}
+
+#jeux-videos {
+  width: 18vw;
+  left: 41vw;
+  top: 44vh;
 }
