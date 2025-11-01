@@ -118,8 +118,6 @@ footer > p {
 .message-end {
   display: none;
   position: absolute;
-  top: 16rem;
-  font-size: 4rem;
 }
 
 #message-good-answer {
@@ -151,4 +149,44 @@ footer > p {
   display: none;
   left: 23vw;
   width: 22vw;
+}
+/* 
+RAJOUTER */
+
+.message-end {
+  text-align: center;
+  top: 16vh;
+  font-size: 3vw;
+  font-weight: 100;
+  white-space: pre-line;
+}
+.score-icon {
+  width: 6vw;
+  height: 9vh;
+  position: absolute;
+}
+
+#perfect-icon {
+  bottom: 0vh;
+  left: 47vw;
+}
+
+#good-icon {
+  bottom: 1vh;
+  left: 44vw;
+}
+
+#notbad-icon {
+  bottom: 1vh;
+  left: 48vw;
+}
+
+#bad-icon {
+  bottom: 0vh;
+  left: 40vw;
+}
+
+#verybad-icon {
+  bottom: 0vh;
+  left: 52vw;
 }

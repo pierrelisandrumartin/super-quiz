@@ -30,7 +30,7 @@ let arraySuperHeros: Question[] = [
     }
 ]
 
-let numberQuestion = 0;
+
 
 const container = document.querySelector(".container") as HTMLElement;
 const buttonNext = document.querySelector(".btn #after") as HTMLButtonElement | null;
@@ -38,8 +38,26 @@ const buttonRestart = document.querySelector(".btn #restart button") as HTMLButt
 const buttonMenu = document.querySelector(".btn #menu") as HTMLButtonElement | null;
 const messageGoodAnswer = document.querySelector("#message-good-answer") as HTMLElement;
 const messageWrongAnswer = document.querySelector("#message-wrong-answer") as HTMLElement;
-const messageEnd = document.querySelector(".message-end") as HTMLElement;
+const messageEnd = document.querySelector(".message-end") as HTMLElement | null;
 
+let numberQuestion = 0;
+let score = 0;
+
+function getScoreMessage(score:number, total: number): string{
+    const percentage = (score / total) * 100;
+    if (percentage === 100) {
+        return ` Fin du quiz ! \n \n ${score}/${total} \n Parfait ! \n Tu es un vrai fan de Super Héros !  <img src="./ASSETS/perfect.png" class="score-icon" id="perfect-icon">`;
+
+    } else if (percentage >= 75) {
+        return `Fin du quiz ! \n \n ${score}/${total} \n Très bien ! \n Tu t'y connais en Super-Héros ! <img src="./ASSETS/good.png" class="score-icon" id="good-icon">`;
+    } else if (percentage >= 50) {
+        return `Fin du quiz ! \n \n ${score}/${total} \n Pas mal ! \n Encore quelques films à regarder ! <img src="./ASSETS/notbad.png" class="score-icon" id="notbad-icon">`;
+    } else if (percentage >= 25) {
+        return `Fin du quiz ! \n \n ${score}/${total} \n Mauvais ! \n Il faut réviser tes classiques ! <img src="./ASSETS/bad.png" class="score-icon" id="bad-icon">`;
+    } else {
+        return `Fin du quiz ! \n \n ${score}/${total} \n Nul ! \n As-tu déjà vu un film de Super-Héros ? <img src="./ASSETS/verybad.png" class="score-icon" id="verybad-icon">`;
+    }
+}
 
 if (buttonNext) {
     buttonNext.disabled = true;
@@ -85,6 +103,7 @@ function answersDisplay() {
                 
                 button.style.border = "4px solid green";
                 messageGoodAnswer.style.display = "inherit";
+                score++;
 
             } else {
 
@@ -107,6 +126,8 @@ function answersDisplay() {
 };
 
 answersDisplay();
+
+
 
 buttonNext?.addEventListener("click", function (e) {
 
@@ -131,6 +152,7 @@ buttonNext?.addEventListener("click", function (e) {
             messageGoodAnswer.style.display = "none";
             messageWrongAnswer.style.display = "none";
             messageEnd.style.display = "inherit"
+            messageEnd.innerHTML = getScoreMessage(score, arraySuperHeros.length);
         };
     };
 });
