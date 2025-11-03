@@ -2,16 +2,18 @@
 <html lang="fr">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Super Quiz</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
         href="https://fonts.googleapis.com/css2?family=Bangers&family=Vend+Sans:ital,wght@0,300..700;1,300..700&display=swap"
         rel="stylesheet" />
-    <link rel="stylesheet" href="./CSS/style.css">
-    <link rel="stylesheet" href="./CSS/reset.css">
+    <title>Super Quiz</title>
+    <link rel="stylesheet" href="./CSS/style.css" />
+    <link rel="stylesheet" href="./CSS/reset.css" />
+    <script>var exports = {};</script>
+    <script defer type="module" src="./DIST/script.js"></script>
 </head>
 
 <body>
@@ -21,8 +23,12 @@
     <main>
         <h2>Thèmes</h2>
         <div class="btn" id="theme">
-            <button>Super-Héros</button>
-            <button>Jeux vidéos</button>
+            <form action="./index.html" method="get">
+                <button id="super-heros" type="submit">Super-Héros</button>
+            </form>
+            <form action="" method="get">
+                <button id="jeux-videos" type="submit">Jeux vidéos</button>
+            </form>
         </div>
 
     </main>
