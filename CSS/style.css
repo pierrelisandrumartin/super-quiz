@@ -161,35 +161,66 @@ RAJOUTER */
   font-weight: 100;
   white-space: pre-line;
 }
-.score-icon {
+.super-heros-icon {
   width: 6vw;
   height: 9vh;
   position: absolute;
 }
 
-#perfect-icon {
+.jeux-videos-icon {
+  width: 6vw;
+  height: 9vh;
+  position: absolute;
+}
+
+#super-heros-perfect-icon {
   bottom: 0vh;
   left: 47vw;
 }
 
-#good-icon {
+#super-heros-good-icon {
   bottom: 1vh;
   left: 44vw;
 }
 
-#notbad-icon {
+#super-heros-notbad-icon {
   bottom: 1vh;
   left: 48vw;
 }
 
-#bad-icon {
-  bottom: 0vh;
-  left: 40vw;
+#super-heros-bad-icon {
+  bottom: 1vh;
+  left: 44vw;
 }
 
-#verybad-icon {
+#super-heros-verybad-icon {
   bottom: 0vh;
   left: 52vw;
+}
+
+#jeux-videos-perfect-icon {
+  bottom: 1vh;
+  left: 47vw;
+}
+
+#jeux-videos-good-icon {
+  bottom: 1vh;
+  left: 42vw;
+}
+
+#jeux-videos-notbad-icon {
+  bottom: 1vh;
+  left: 48vw;
+}
+
+#jeux-videos-bad-icon {
+  bottom: 0vh;
+  left: 46vw;
+}
+
+#jeux-videos-verybad-icon {
+  bottom: 0vh;
+  left: 46vw;
 }
 
 /* ACCUEIL */

@@ -89,18 +89,34 @@ const messageWrongAnswer = document.querySelector("#message-wrong-answer") as HT
 const messageEnd = document.querySelector(".message-end") as HTMLElement | null;
 
 // SCORE MESSAGE
-function getScoreMessage(score:number, total: number): string {
+function getScoreMessage(score:number, total: number, theme: Theme): string {
     const percentage = (score / total) * 100;
-    if (percentage === 100) {
-        return ` Fin du quiz ! \n \n ${score}/${total} \n Parfait ! \n Tu es un vrai fan de Super Héros !  <img src="./ASSETS/perfect.png" class="score-icon" id="perfect-icon">`;
-    } else if (percentage >= 75) {
-        return `Fin du quiz ! \n \n ${score}/${total} \n Très bien ! \n Tu t'y connais en Super-Héros ! <img src="./ASSETS/good.png" class="score-icon" id="good-icon">`;
-    } else if (percentage >= 50) {
-        return `Fin du quiz ! \n \n ${score}/${total} \n Pas mal ! \n Encore quelques films à regarder ! <img src="./ASSETS/notbad.png" class="score-icon" id="notbad-icon">`;
-    } else if (percentage >= 25) {
-        return `Fin du quiz ! \n \n ${score}/${total} \n Mauvais ! \n Il faut réviser tes classiques ! <img src="./ASSETS/bad.png" class="score-icon" id="bad-icon">`;
-    } else {
-        return `Fin du quiz ! \n \n ${score}/${total} \n Nul ! \n As-tu déjà vu un film de Super-Héros ? <img src="./ASSETS/verybad.png" class="score-icon" id="verybad-icon">`;
+
+    if (theme === "superHeros") {
+        if (percentage === 100) {
+            return ` Fin du quiz ! \n ${score}/${total} \n Parfait ! \n Tu es un vrai fan de Super Héros !  <img src="./ASSETS/perfect_superheros.png" class="super-heros-icon" id="super-heros-perfect-icon">`;
+        } else if (percentage >= 75) {
+            return `Fin du quiz ! \n ${score}/${total} \n Très bien ! \n Tu t'y connais en Super-Héros ! <img src="./ASSETS/good_superheros.png" class="super-heros-icon" id="super-heros-good-icon">`;
+        } else if (percentage >= 50) {
+            return `Fin du quiz ! \n ${score}/${total} \n Pas mal ! \n Encore quelques films à regarder ! <img src="./ASSETS/notbad_superheros.png" class="super-heros-icon" id="super-heros-notbad-icon">`;
+        } else if (percentage >= 25) {
+            return `Fin du quiz ! \n ${score}/${total} \n Mauvais ! \n Il faut réviser tes classiques ! <img src="./ASSETS/bad_superheros.png" class="super-heros-icon" id="super-heros-bad-icon">`;
+        } else {
+            return `Fin du quiz ! \n ${score}/${total} \n Nul ! \n As-tu déjà vu un film de Super-Héros ? <img src="./ASSETS/verybad_superheros.png" class="super-heros-icon" id="super-heros-verybad-icon">`;
+        }
+
+    } else {  
+        if (percentage === 100) {
+            return ` Fin du quiz ! \n ${score}/${total} \n Parfait ! \n Tu es un vrai fan de Jeux Vidéos !  <img src="./ASSETS/perfect_jeuxvideos.png" class="jeux-videos-icon" id="jeux-videos-perfect-icon">`;
+        } else if (percentage >= 75) {
+            return `Fin du quiz ! \n ${score}/${total} \n Très bien ! \n Tu t'y connais en Jeux Vidéos ! <img src="./ASSETS/good_jeuxvideos.png" class="jeux-videos-icon" id="jeux-videos-good-icon">`;
+        } else if (percentage >= 50) {
+            return `Fin du quiz ! \n ${score}/${total} \n Pas mal ! \n Encore quelques jeux à essayer ! <img src="./ASSETS/notbad_jeuxvideos.png" class="jeux-videos-icon" id="jeux-videos-notbad-icon">`;
+        } else if (percentage >= 25) {
+            return `Fin du quiz ! \n ${score}/${total} \n Mauvais ! \n Tu manques de culture Gaming ! <img src="./ASSETS/bad_jeuxvideos.png" class="jeux-videos-icon" id="jeux-videos-bad-icon">`;
+        } else {
+            return `Fin du quiz ! \n ${score}/${total} \n Nul ! \n Sais-tu ce qu'est un Jeux Vidéo ? <img src="./ASSETS/verybad_jeuxvideos.png" class="jeux-videos-icon" id="jeux-videos-verybad-icon">`;
+        }
     }
 }
 
@@ -198,7 +214,7 @@ buttonNext?.addEventListener("click", () => {
             messageGoodAnswer.style.display = "none";
             messageWrongAnswer.style.display = "none";
             messageEnd.style.display = "inherit"
-            messageEnd.innerHTML = getScoreMessage(score, questions.length);
+            messageEnd.innerHTML = getScoreMessage(score, questions.length, theme);
         };
     };
 });
