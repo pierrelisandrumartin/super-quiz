@@ -2,6 +2,7 @@ html {
   height: 100vh;
   font-family: "Vent Sans", sans-serif;
   overflow: hidden;
+  
 }
 
 body {
@@ -14,7 +15,7 @@ body {
 h1 {
   font-family: "Bangers", system-ui;
   text-align: center;
-  font-size: 6rem;
+  font-size: 4rem;
   filter: drop-shadow(0px 16px 6px #525252);
 }
 
@@ -28,7 +29,7 @@ main {
 
 h2 {
   font-family: "Bangers", system-ui;
-  font-size: 3rem;
+  font-size: 2rem;
   filter: drop-shadow(0px 8px 6px #525252);
   height: 5vh;
 }
@@ -43,21 +44,22 @@ h2 {
 }
 
 .container > p {
+  text-align: center;
   font-size: 24px;
   margin: 2rem 0;
   font-weight: 800;
 }
 
 .answer {
-  width: 46vw;
+  width: 80vw;
   height: 4rem;
   font-size: 24px;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  margin-bottom: 1rem;
-  padding-left: 2rem;
+  margin-bottom: 2rem;
+  padding-left: 1rem;
   border-radius: 20px;
   filter: drop-shadow(0px 6px 9px #363636);
   border: none;
@@ -118,37 +120,118 @@ footer > p {
 .message-end {
   display: none;
   position: absolute;
-  top: 16rem;
+  top: 9rem;
   font-size: 4rem;
+}  
+
+#after {
+  right : 34vw;
+  top : 8vh;
+  width : 34vw;
 }
 
 #message-good-answer {
   display: none;
-  font-size: 3vw;
+  font-size: 6vw;
   font-weight: 600;
   color: green;
 }
 
 #message-wrong-answer {
   display: none;
-  font-size: 3vw;
+  font-size: 6vw;
   font-weight: 600;
   color: red;
 }
 
-#after {
-  right: 16vw;
-  width: 16vw;
-}
-
 #restart > button {
   display: none;
-  width: 22vw;
-  left: 56vw;
+  width: 60vw;
+  left: 20vw;
+  bottom: 20vh;
+  height: 10vh
 }
 
 #menu {
   display: none;
-  left: 23vw;
-  width: 22vw;
+  left: 20vw;
+  width: 60vw;
+  bottom: 5vh;
+  height: 10vh;
+}
+
+@media (min-width: 768px) {
+  h1{
+  font-size: 4rem;
+  }
+  .container > p {
+    margin: 1rem;
+    margin-bottom: 1rem;
+    font-size: 21px;
+  }
+  .answer {
+    margin-bottom: 4vh;
+    height: 3rem; 
+  }
+  #message-wrong-answer {
+    position: absolute;
+    bottom: 12vh;
+    font-size: 5vh;   
+  }
+  #message-good-answer {
+     position: absolute;
+    bottom: 12vh;
+    font-size: 5vh;
+  }
+  .message-end {
+    top: 4rem
+  }
+  #restart > button {
+    bottom: 11rem;
+  }
+  #after {
+    top: 5vh;
+  }
+}
+
+@media (min-width: 1024px) {
+h1{
+  font-size: 6rem;
+}
+h2{
+  font-size: 3rem;
+}
+.container > p {
+  font-size: 26px;
+}
+.answer {
+  font-size: 30px;
+  margin-bottom: 4vh;
+  height: 4rem;
+}
+#message-wrong-answer {
+  bottom: 14vh;
+  font-size: 7vh;
+}
+#message-good-answer {
+  bottom: 14vh;
+  font-size: 7vh;
+}
+#after {
+  height: 4rem;
+  font-size: 30px;
+  height: 5rem;
+  top: 3vh
+}
+#restart > button {
+  bottom: 18rem;
+  height: 8rem;
+  }
+#menu {
+  bottom: 5rem;
+  height: 8rem;
+    }
+footer > p {
+  font-size: 25px;
+}
 }
