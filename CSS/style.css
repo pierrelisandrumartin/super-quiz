@@ -140,7 +140,7 @@ footer > p {
   width: 16vw;
 }
 
-#restart > button {
+#restart {
   display: none;
   width: 22vw;
   left: 56vw;
@@ -221,6 +221,14 @@ RAJOUTER */
 #jeux-videos-verybad-icon {
   bottom: 0vh;
   left: 46vw;
+}
+
+#title-super-heros {
+  display: none;
+}
+
+#title-jeux-videos {
+  display: none;
 }
 
 /* ACCUEIL */

@@ -82,11 +82,13 @@ let score = 0;
 // DOM
 const container = document.querySelector(".container") as HTMLElement;
 let buttonNext = document.querySelector(".btn #after") as HTMLButtonElement | null;
-const buttonRestart = document.querySelector(".btn #restart button") as HTMLButtonElement | null;
+const buttonRestart = document.querySelector(".btn #restart") as HTMLButtonElement | null;
 const buttonMenu = document.querySelector(".btn #menu") as HTMLButtonElement | null;
 const messageGoodAnswer = document.querySelector("#message-good-answer") as HTMLElement;
 const messageWrongAnswer = document.querySelector("#message-wrong-answer") as HTMLElement;
 const messageEnd = document.querySelector(".message-end") as HTMLElement | null;
+const titleSuperHeros = document.querySelector("#title-super-heros") as HTMLElement | null;
+const titleJeuxVideos = document.querySelector("#title-jeux-videos") as HTMLElement | null;
 
 // SCORE MESSAGE
 function getScoreMessage(score:number, total: number, theme: Theme): string {
@@ -130,6 +132,12 @@ function questionDisplay(): void {
     const newP = document.createElement("p");
     newP.textContent = questions[numberQuestion]?.question as string;
     container.appendChild(newP)
+
+    if (titleSuperHeros && theme === "superHeros") {
+        titleSuperHeros.style.display = "inherit";
+    } else if (titleJeuxVideos && theme === "jeuxVideos") {
+        titleJeuxVideos.style.display = "inherit";
+    }
 };
 
 // AFFICHAGE REPONSES
@@ -147,13 +155,9 @@ function answersDisplay(): void {
         newInput.className = "answer";
         newInput.name = "answer";
         newInput.value = answer;
-        newInput.addEventListener("click", () => answersClick(newInput));
-        container.appendChild(newInput);
+        container.appendChild(newInput);    
     });
-};
 
-// DESACTIVATION BOUTONS CLIC REPONSE
-function answersClick(newInput: HTMLInputElement): void {
     const buttonAnswer = document.querySelectorAll(".answer") as NodeListOf<HTMLInputElement>;
     
     buttonAnswer.forEach(button => {
@@ -165,6 +169,7 @@ function answersClick(newInput: HTMLInputElement): void {
 
             button.disabled = false;
             button.style.border = "4px solid #800404";
+
             if (buttonNext) {
                 buttonNext.disabled = false;
             }
@@ -221,3 +226,19 @@ buttonNext?.addEventListener("click", () => {
 
 questionDisplay();
 answersDisplay();
+
+buttonRestart?.addEventListener("click", () => {
+    numberQuestion = 0;
+    score = 0;
+
+    container.innerHTML = "";
+    messageEnd!.style.display = "none";
+    buttonRestart.style.display = "none";
+    buttonMenu!.style.display = "none";
+    buttonNext!.style.display = "inherit";
+    buttonNext!.disabled = true;
+    questionDisplay();
+    answersDisplay();
+});
+
+
