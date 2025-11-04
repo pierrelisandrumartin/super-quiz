@@ -333,3 +333,9 @@ RAJOUTER */
   left: 41vw;
   top: 44vh;
 }
+
+/* TIMER */
+#timer {
+  position: absolute;
+  right: 20vw;
+}
