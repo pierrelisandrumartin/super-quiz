@@ -139,7 +139,8 @@ footer > p {
   font-size: 6vw;
   font-weight: 600;
   color: green;
-  padding-bottom: 9vh;
+  position: absolute;
+  bottom: 18vh;
 }
 
 #message-wrong-answer {
@@ -147,7 +148,8 @@ footer > p {
   font-size: 6vw;
   font-weight: 600;
   color: red;
-  padding-bottom: 9vh;
+  position: absolute;
+  bottom: 18vh;
 }
 
 #restart {
