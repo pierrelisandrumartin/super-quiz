@@ -195,7 +195,6 @@ function answersDisplay(): void {
     });
 };
 
-
 buttonNext?.addEventListener("click", () => {
 
     if (container && numberQuestion + 1 < questions.length) {
@@ -208,17 +207,17 @@ buttonNext?.addEventListener("click", () => {
 
         if (buttonNext) {
             buttonNext.disabled = true;
-        };
+        }
 
     } else {
         if (container && messageEnd && buttonRestart && buttonMenu) {
             container.innerHTML = "";
             buttonNext.style.display = "none";
-            buttonMenu.style.display = "inherit"
+            buttonMenu.style.display = "inherit";
             buttonRestart.style.display = "inherit";
             messageGoodAnswer.style.display = "none";
             messageWrongAnswer.style.display = "none";
-            messageEnd.style.display = "inherit"
+            messageEnd.style.display = "flex";
             messageEnd.innerHTML = getScoreMessage(score, questions.length, theme);
         };
     };
@@ -243,21 +242,21 @@ buttonRestart?.addEventListener("click", () => {
 });
 
 
-
 // TIMER
-const timerElement = document.querySelector('#timer') as HTMLDivElement | null;
-let time = 20 ;
+// const timerElement = document.querySelector('#timer') as HTMLDivElement | null;
+// let time = 20;
 
-// DIMINUER TEMPS
+// setInterval(() => {
+//     let minutes = Math.floor(time / 60);
+//     let secondes = Math.floor(time % 60);
+//     time = time <= 0 ? 0 : time - 1;
+//     if (timerElement) {
+//         timerElement.innerText = `Temps \n  ${minutes.toString().padStart(2, '0')}:${secondes.toString().padStart(2, '0')}`;
+//     };
 
-function lastTime() {
-    let secondes = Math.floor(time % 60);
-    if (timerElement) {
-        timerElement.textContent = `00:${secondes.toString().padStart(2, '0')}`;
-        time = time <= 0 ? 0 : time - 1;
-        console.log(time);
-    }
+//     if (time === 0) { 
+//         nextQuestion();
+//     }
+// }, 1000);
 
-}
 
-setInterval(lastTime, 1000);

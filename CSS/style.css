@@ -335,7 +335,14 @@ RAJOUTER */
 }
 
 /* TIMER */
-#timer {
+/* #timer {
   position: absolute;
-  right: 20vw;
-}
+  right: 10vw;
+  bottom: 78vh;
+  font-size: 2vw;
+  font-weight: 600;
+  background-color: rgb(244 67 54 / 29%);
+  border-radius: 2vh;
+  padding: 1vh 3vw;
+  text-align: center;
+} */
