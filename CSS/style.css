@@ -382,11 +382,15 @@ footer > p {
   #restart {
     bottom: 0rem;
     height: 5rem;
+    width: 34vw;
+    left: 34vw;
   }
 
   #menu {
     bottom: 5rem;
     height: 5rem;
+    width: 34vw;
+    left: 34vw;
   }
 
   footer > p {
