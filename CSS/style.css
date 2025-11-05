@@ -140,7 +140,7 @@ footer > p {
   font-weight: 600;
   color: green;
   position: absolute;
-  bottom: 18vh;
+  bottom: 15vh;
 }
 
 #message-wrong-answer {
@@ -149,7 +149,7 @@ footer > p {
   font-weight: 600;
   color: red;
   position: absolute;
-  bottom: 18vh;
+  bottom: 15vh;
 }
 
 #restart {
