@@ -14,13 +14,13 @@ body {
 h1 {
   font-family: "Bangers", system-ui;
   text-align: center;
-  font-size: 4rem;
+  font-size: 5rem;
   filter: drop-shadow(0px 16px 6px #525252);
 }
 
 main {
   display: flex;
-  flex: 1;
+  height: 80vh;
   flex-direction: column;
   align-items: center;
   position: relative;
@@ -28,7 +28,7 @@ main {
 
 h2 {
   font-family: "Bangers", system-ui;
-  font-size: 2rem;
+  font-size: 3rem;
   filter: drop-shadow(0px 8px 6px #525252);
   height: 5vh;
 }
@@ -45,7 +45,7 @@ h2 {
 .container > p {
   text-align: center;
   font-size: 24px;
-  margin: 2rem 0;
+  margin: 2rem;
   font-weight: 800;
 }
 
@@ -125,9 +125,9 @@ footer > p {
 }
 
 #after {
-  right: 34vw;
-  top: 8vh;
-  width: 34vw;
+ right: 35vw;
+ width: 30vw;
+ top: 8vh;
 }
 
 #message-good-answer {
@@ -144,172 +144,115 @@ footer > p {
   color: red;
 }
 
-#after {
-  right: 16vw;
-  width: 16vw;
-}
-
 #restart {
   display: none;
   width: 60vw;
   left: 20vw;
-  bottom: 20vh;
-  height: 10vh;
+  bottom: 7vh;
+  height: 7vh;
 }
 
 #menu {
   display: none;
   left: 20vw;
   width: 60vw;
-  bottom: 5vh;
-  height: 10vh;
+  top:0vh;
+  height: 7vh;
 }
-
-@media (min-width: 768px) {
-  h1 {
-    font-size: 4rem;
-  }
-  .container > p {
-    margin: 1rem;
-    margin-bottom: 1rem;
-    font-size: 21px;
-  }
-  .answer {
-    margin-bottom: 4vh;
-    height: 3rem;
-  }
-  #message-wrong-answer {
-    position: absolute;
-    bottom: 12vh;
-    font-size: 5vh;
-  }
-  #message-good-answer {
-    position: absolute;
-    bottom: 12vh;
-    font-size: 5vh;
-  }
-  .message-end {
-    top: 4rem;
-  }
-  #restart > button {
-    bottom: 11rem;
-  }
-  #after {
-    top: 5vh;
-  }
-}
-
-@media (min-width: 1024px) {
-  h1 {
-    font-size: 6rem;
-  }
-  h2 {
-    font-size: 3rem;
-  }
-  .container > p {
-    font-size: 26px;
-  }
-  .answer {
-    font-size: 30px;
-    margin-bottom: 4vh;
-    height: 4rem;
-  }
-  #message-wrong-answer {
-    bottom: 14vh;
-    font-size: 7vh;
-  }
-  #message-good-answer {
-    bottom: 14vh;
-    font-size: 7vh;
-  }
-  #after {
-    height: 4rem;
-    font-size: 30px;
-    height: 5rem;
-    top: 3vh;
-  }
-  #restart > button {
-    bottom: 18rem;
-    height: 8rem;
-  }
-  #menu {
-    bottom: 5rem;
-    height: 8rem;
-  }
-  footer > p {
-    font-size: 25px;
-  }
-}
-/* 
-RAJOUTER */
 
 .message-end {
   text-align: center;
-  top: 16vh;
-  font-size: 3vw;
+  display: none;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    margin-top: 2rem;
+  top: 11vh;
+    font-size: 5vw;
   font-weight: 100;
   white-space: pre-line;
 }
+
 .super-heros-icon {
   width: 6vw;
   height: 9vh;
-  position: absolute;
+  margin-top: 2vh;
 }
 
 .jeux-videos-icon {
   width: 6vw;
   height: 9vh;
-  position: absolute;
 }
 
 #super-heros-perfect-icon {
-  bottom: 0vh;
-  left: 47vw;
+   top: 19vh;
+  left: 26vw;
+    height: 12vh;
+    width : 12vh
 }
 
 #super-heros-good-icon {
-  bottom: 1vh;
-  left: 44vw;
+   top: 19vh;
+  left: 23vw;
+    height: 12vh;
+    width : 12vh
 }
 
 #super-heros-notbad-icon {
-  bottom: 1vh;
-  left: 48vw;
+   top: 19vh;
+  left: 26vw;
+    height: 12vh;
+    width : 12vh
 }
 
 #super-heros-bad-icon {
-  bottom: 1vh;
-  left: 44vw;
+    top: 19vh;
+    left: 26vh;
+    height: 12vh;
+    width: 12vh;
 }
 
 #super-heros-verybad-icon {
-  bottom: 0vh;
-  left: 52vw;
+   top: 17vh;
+  left: 31vw;
+    height: 12vh;
+    width : 12vh
 }
 
 #jeux-videos-perfect-icon {
-  bottom: 1vh;
-  left: 47vw;
+  top: 19vh;
+  left: 26vw;
+  height: 12vh;
+  width : 12vh
 }
 
 #jeux-videos-good-icon {
-  bottom: 1vh;
-  left: 42vw;
+  top: 19vh;
+  left: 22vw;
+  height: 12vh;
+  width : 12vh
+  
 }
 
 #jeux-videos-notbad-icon {
-  bottom: 1vh;
-  left: 48vw;
+   top: 19vh;
+  left: 24vw;
+    height: 12vh;
+    width : 12vh
 }
 
 #jeux-videos-bad-icon {
-  bottom: 0vh;
-  left: 46vw;
+  top: 19vh;
+  left: 24vw;
+  height: 12vh;
+  width : 12vh;
 }
 
 #jeux-videos-verybad-icon {
-  bottom: 0vh;
-  left: 46vw;
+  top: 19vh;
+  left: 21vw;
+  height: 12vh;
+  width : 12vh;
 }
 
 #title-super-heros {
@@ -320,16 +263,119 @@ RAJOUTER */
   display: none;
 }
 
-/* ACCUEIL */
-
 #super-heros {
-  width: 18vw;
-  left: 41vw;
-  top: 30vh;
+  width: 50vw;
+  left: 25vw;
+  top: 25vh;
+  height: 5rem;
 }
 
 #jeux-videos {
-  width: 18vw;
-  left: 41vw;
-  top: 44vh;
+  width: 50vw;
+  left: 25vw;
+  bottom: 27vh;
+  height: 5rem;
 }
+
+ @media (min-width: 768px) {
+  h1 {
+    font-size: 4rem;
+  }
+
+  .container > p {
+    margin: 1rem;
+    margin-bottom: 1rem;
+    font-size: 21px;
+  }
+
+  .answer {
+    margin-bottom: 4vh;
+    height: 3rem;
+  }
+
+  #message-wrong-answer {
+    position: absolute;
+    bottom: 12vh;
+    font-size: 5vh;
+  }
+
+  #message-good-answer {
+    position: absolute;
+    bottom: 12vh;
+    font-size: 5vh;
+  }
+
+  .message-end {
+    top: 4rem;
+    font-size: 4vh;
+  }
+
+  #restart {
+    width: 60vw;
+    left: 20vw;
+    bottom: 0vh;
+    height: 7vh;
+  }
+
+  #menu {
+   top: 4vh
+  }
+
+  #after {
+    top: 5vh;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  h1 {
+    font-size: 6rem;
+  }
+
+  h2 {
+    font-size: 3rem;
+  }
+
+  .container > p {
+    font-size: 26px;
+  }
+
+  .answer {
+    font-size: 30px;
+    margin-bottom: 4vh;
+    height: 4rem;
+  }
+
+  #message-wrong-answer {
+    bottom: 14vh;
+    font-size: 7vh;
+  }
+
+  #message-good-answer {
+    bottom: 14vh;
+    font-size: 7vh;
+  }
+
+  #after {
+    height: 4rem;
+    font-size: 30px;
+    height: 5rem;
+    top: 3vh;
+  }
+
+  #restart {
+    bottom: 0rem;
+    height: 5rem;
+  }
+
+  #menu {
+    bottom: 5rem;
+    height: 5rem;
+  }
+
+  footer > p {
+    font-size: 25px;
+  }
+} 
+
+
