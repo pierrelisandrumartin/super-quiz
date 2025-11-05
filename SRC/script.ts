@@ -62,7 +62,7 @@ const QUESTIONS_BY_THEME: Record<Theme, Question[]> = {
 };
 
 // SELECTION THEME
-function getSelectedTheme(): Theme { 
+function getSelectedTheme(): Theme {
     const params = new URLSearchParams(window.location.search);
     const raw = params.get("theme");
 
@@ -91,7 +91,7 @@ const titleSuperHeros = document.querySelector("#title-super-heros") as HTMLElem
 const titleJeuxVideos = document.querySelector("#title-jeux-videos") as HTMLElement | null;
 
 // SCORE MESSAGE
-function getScoreMessage(score:number, total: number, theme: Theme): string {
+function getScoreMessage(score: number, total: number, theme: Theme): string {
     const percentage = (score / total) * 100;
 
     if (theme === "superHeros") {
@@ -107,7 +107,7 @@ function getScoreMessage(score:number, total: number, theme: Theme): string {
             return `Fin du quiz ! \n ${score}/${total} \n Nul ! \n As-tu déjà vu un film de Super-Héros ? <img src="./ASSETS/verybad_superheros.png" class="super-heros-icon" id="super-heros-verybad-icon">`;
         }
 
-    } else {  
+    } else {
         if (percentage === 100) {
             return ` Fin du quiz ! \n ${score}/${total} \n Parfait ! \n Tu es un vrai fan de Jeux Vidéos !  <img src="./ASSETS/perfect_jeuxvideos.png" class="jeux-videos-icon" id="jeux-videos-perfect-icon">`;
         } else if (percentage >= 75) {
@@ -148,18 +148,18 @@ function answersDisplay(): void {
         console.warn("aucune reponse disponible pour la question", numberQuestion);
         return;
     }
-    
+
     answer.forEach((answer) => {
         const newInput = document.createElement("input");
         newInput.type = "button";
         newInput.className = "answer";
         newInput.name = "answer";
         newInput.value = answer;
-        container.appendChild(newInput);    
+        container.appendChild(newInput);
     });
 
     const buttonAnswer = document.querySelectorAll(".answer") as NodeListOf<HTMLInputElement>;
-    
+
     buttonAnswer.forEach(button => {
         button.addEventListener("click", function (e) {
 
@@ -175,7 +175,7 @@ function answersDisplay(): void {
             }
 
             if (messageGoodAnswer && messageWrongAnswer && button.value === questions[numberQuestion]?.correctAnswer) {
-                
+
                 button.style.border = "4px solid green";
                 messageGoodAnswer.style.display = "inherit";
                 score++;
@@ -195,7 +195,6 @@ function answersDisplay(): void {
     });
 };
 
-
 buttonNext?.addEventListener("click", () => {
 
     if (container && numberQuestion + 1 < questions.length) {
@@ -208,17 +207,17 @@ buttonNext?.addEventListener("click", () => {
 
         if (buttonNext) {
             buttonNext.disabled = true;
-        };
+        }
 
     } else {
         if (container && messageEnd && buttonRestart && buttonMenu) {
             container.innerHTML = "";
             buttonNext.style.display = "none";
-            buttonMenu.style.display = "inherit"
+            buttonMenu.style.display = "inherit";
             buttonRestart.style.display = "inherit";
             messageGoodAnswer.style.display = "none";
             messageWrongAnswer.style.display = "none";
-            messageEnd.style.display = "inherit"
+            messageEnd.style.display = "flex";
             messageEnd.innerHTML = getScoreMessage(score, questions.length, theme);
         };
     };
@@ -239,6 +238,25 @@ buttonRestart?.addEventListener("click", () => {
     buttonNext!.disabled = true;
     questionDisplay();
     answersDisplay();
+    
 });
+
+
+// TIMER
+// const timerElement = document.querySelector('#timer') as HTMLDivElement | null;
+// let time = 20;
+
+// setInterval(() => {
+//     let minutes = Math.floor(time / 60);
+//     let secondes = Math.floor(time % 60);
+//     time = time <= 0 ? 0 : time - 1;
+//     if (timerElement) {
+//         timerElement.innerText = `Temps \n  ${minutes.toString().padStart(2, '0')}:${secondes.toString().padStart(2, '0')}`;
+//     };
+
+//     if (time === 0) { 
+//         nextQuestion();
+//     }
+// }, 1000);
 
 
