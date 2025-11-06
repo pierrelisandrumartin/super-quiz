@@ -4,7 +4,7 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const QUESTIONS_BY_THEME = {
     superHeros: [
         {
-            question: "Quel est le premier acteur à avoir jouer Spider-Man ?",
+            question: "Quel est le premier acteur à avoir joué Spider-Man ?",
             answer: ["Tom Holland", "Andrew Garfield", "Tobby Maguire", "Peter Parker"],
             correctAnswer: "Tobby Maguire"
         },
